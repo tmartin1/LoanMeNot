@@ -1,6 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LoanMeNot</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Buttons -->
+    <string name="button_send">Send</string>
+
+    <!-- Main Activity -->
+    <string name="title_activity_main">MainActivity</string>
+    <string name="edit_message">Enter a Message</string>
+    <string name="title_activity_display_message">Main Message</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Display Message Activity -->
+
 </resources>
