@@ -5,4 +5,38 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- Basic Page Styles -->
+    <style name="relative_layout_page_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">15sp</item>
+        <item name="android:layout_marginRight">15sp</item>
+    </style>
+
+    <style name="page_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">12pt</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="main_button_wrapper">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:weightSum">1</item>
+    </style>
+
+    <style name="main_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>

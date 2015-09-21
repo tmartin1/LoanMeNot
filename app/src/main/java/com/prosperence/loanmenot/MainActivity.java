@@ -47,4 +47,30 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    // Show direct loan inputs.
+    public void directLoan() {
+        // goToFormView("directLoan");
+    }
+
+    // Show credit card inputs.
+    public void creditCard() {
+        // goToFormView("creditCard");
+    }
+
+    // Show periodic payment inputs.
+    public void periodicPayments() {
+        // goToFormView("periodicPayments");
+    }
+
+    // Show lease-to-own inputs.
+    public void leaseToOwn() {
+        // goToFormView("leaseToOwn");
+    }
+
+    // Go to the form view to collect loan/payment information.
+    private void goToFormView(String view) {
+        //
+    }
+
 }

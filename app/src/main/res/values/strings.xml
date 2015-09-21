@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoanMeNot</string>
 
+    <!-- Page Titles -->
+    <string name="app_name">LoanMeNot</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Main Page Text -->
+    <string name="main_title">Click an Option to Get Started!</string>
 
     <!-- Buttons -->
     <string name="button_send">Send</string>
+
+
+    <string name="button_1_name">Direct Loan</string>
+    <string name="button_1_function">directLoan</string>
+
+    <string name="button_2_name">Credit Card</string>
+    <string name="button_2_function">creditCard</string>
+
+    <string name="button_3_name">Periodic Payments</string>
+    <string name="button_3_function">periodicPayments</string>
+
+    <string name="button_4_name">Lease To Own</string>
+    <string name="button_4_function">leaseToOwn</string>
 
     <!-- Main Activity -->
     <string name="title_activity_main">MainActivity</string>
