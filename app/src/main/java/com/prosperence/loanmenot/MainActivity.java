@@ -50,26 +50,26 @@ public class MainActivity extends AppCompatActivity {
 
     // Show direct loan inputs.
     public void directLoan() {
-        // goToFormView("directLoan");
+        goToFormView("directLoan");
     }
 
     // Show credit card inputs.
     public void creditCard() {
-        // goToFormView("creditCard");
+        goToFormView("creditCard");
     }
 
     // Show periodic payment inputs.
     public void periodicPayments() {
-        // goToFormView("periodicPayments");
+         goToFormView("periodicPayments");
     }
 
     // Show lease-to-own inputs.
     public void leaseToOwn() {
-        // goToFormView("leaseToOwn");
+         goToFormView("leaseToOwn");
     }
 
     // Go to the form view to collect loan/payment information.
-    private void goToFormView(String view) {
+    public void goToFormView(String view) {
         //
     }
 
