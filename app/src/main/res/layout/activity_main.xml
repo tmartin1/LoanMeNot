@@ -2,41 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/relative_layout_page_style">
 
-    <TextView style="@style/page_title"
-        android:id="@+id/MainViewTitle"
-        android:text="@string/main_title">
-    </TextView>
+    <LinearLayout style="@style/form_wrapper">
 
-    <LinearLayout style="@style/main_button_wrapper"
-        android:id="@+id/main_button_1"
-        android:layout_below="@+id/MainViewTitle">
-        <Button style="@style/main_button"
-            android:text="@string/button_1_name"
-            android:onClick="directLoan" />
-    </LinearLayout>
+        <TextView style="@style/page_title" android:text="@string/main_title"></TextView>
 
-    <LinearLayout style="@style/main_button_wrapper"
-        android:id="@+id/main_button_2"
-        android:layout_below="@+id/main_button_1">
-        <Button style="@style/main_button"
-            android:text="@string/button_2_name"
-            android:onClick="@string/button_2_function" />
-    </LinearLayout>
+        <LinearLayout style="@style/main_button_wrapper">
+            <Button style="@style/main_button"
+                android:text="@string/button_1_name"
+                android:onClick="directLoan" />
+        </LinearLayout>
 
-    <LinearLayout style="@style/main_button_wrapper"
-        android:id="@+id/main_button_3"
-        android:layout_below="@+id/main_button_2">
-        <Button style="@style/main_button"
-            android:text="@string/button_3_name"
-            android:onClick="@string/button_2_function" />
-    </LinearLayout>
+        <LinearLayout style="@style/main_button_wrapper">
+            <Button style="@style/main_button"
+                android:text="@string/button_2_name"
+                android:onClick="@string/button_2_function" />
+        </LinearLayout>
 
-    <LinearLayout style="@style/main_button_wrapper"
-        android:id="@+id/main_button_4"
-        android:layout_below="@+id/main_button_3">
-        <Button style="@style/main_button"
-            android:text="@string/button_4_name"
-            android:onClick="@string/button_2_function" />
+        <LinearLayout style="@style/main_button_wrapper">
+            <Button style="@style/main_button"
+                android:text="@string/button_3_name"
+                android:onClick="@string/button_3_function" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/main_button_wrapper">
+            <Button style="@style/main_button"
+                android:text="@string/button_4_name"
+                android:onClick="@string/button_4_function" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
