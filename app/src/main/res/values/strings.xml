@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- Main Page Text -->
-    <string name="main_title">Click an Option to Get Started!</string>
+    <string name="main_title">Click to Get Started!</string>
 
     <!-- Buttons -->
     <string name="button_send">Send</string>

@@ -41,16 +41,18 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.edit_message);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message);
+//        startActivity(intent);
     }
 
     // Show direct loan inputs.
-    public void directLoan() {
-        goToFormView("directLoan");
+    public void directLoan(View view) {
+//        goToFormView("directLoan");
+        Intent intent = new Intent(this, BasicForm.class);
+        startActivity(intent);
     }
 
     // Show credit card inputs.

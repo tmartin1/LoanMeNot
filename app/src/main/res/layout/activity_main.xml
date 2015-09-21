@@ -12,7 +12,7 @@
         android:layout_below="@+id/MainViewTitle">
         <Button style="@style/main_button"
             android:text="@string/button_1_name"
-            android:onClick="@string/button_1_function" />
+            android:onClick="directLoan" />
     </LinearLayout>
 
     <LinearLayout style="@style/main_button_wrapper"
