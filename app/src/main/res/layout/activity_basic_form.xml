@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/form_page_layout"
+    tools:context="com.prosperence.loanmenot.BasicForm">
+
+    <LinearLayout style="@style/form_wrapper">
+
+        <LinearLayout style="@style/field_wrapper">
+            <TextView style="@style/field_label"
+                android:text="Total Cost" />
+            <EditText style="@style/number_field_input"
+                android:id="@+id/totalCost" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/field_wrapper">
+            <TextView style="@style/field_label"
+                android:text="Payment Amount" />
+
+            <EditText style="@style/number_field_input"
+                android:id="@+id/paymentAmount" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/field_wrapper">
+            <TextView style="@style/field_label"
+                android:text="Number of Payments" />
+
+            <EditText style="@style/number_field_input"
+                android:id="@+id/numberOfPayments" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/field_wrapper">
+            <TextView style="@style/field_label"
+                android:text="Payment Frequency" />
+
+            <EditText style="@style/number_field_input"
+                android:id="@+id/paymentFrequency" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

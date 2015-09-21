@@ -15,6 +15,15 @@
         <item name="android:layout_marginRight">15sp</item>
     </style>
 
+    <style name="form_page_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
     <style name="page_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -43,6 +52,39 @@
         <item name="android:paddingBottom">25sp</item>
         <item name="android:layout_marginTop">5sp</item>
         <item name="android:layout_marginBottom">5sp</item>
+    </style>
+
+    <!-- Form Styles -->
+    <style name="form_wrapper">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_marginTop">15sp</item>
+        <item name="android:weightSum">1</item>
+    </style>
+
+    <style name="field_wrapper">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.1</item>
+    </style>
+
+    <style name="field_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="number_field_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">number</item>
+        <item name="android:ems">10</item>
+        <item name="android:layout_weight">0.10</item>
     </style>
 
 </resources>

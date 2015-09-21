@@ -30,6 +30,7 @@
     <string name="title_activity_display_message">Main Message</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_basic_form">BasicForm</string>
 
     <!-- Display Message Activity -->
 

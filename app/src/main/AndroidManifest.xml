@@ -24,6 +24,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prosperence.loanmenot.MainActivity" />
         </activity>
+        <activity
+            android:name=".BasicForm"
+            android:label="@string/title_activity_basic_form" >
+        </activity>
     </application>
 
 </manifest>
