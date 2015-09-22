@@ -1,6 +1,10 @@
+
+
+<!-- Currently, this entire file is NOT used. The main page view is build programmatically. -->
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     style="@style/relative_layout_page_style">
 
     <TextView style="@style/page_title"
@@ -9,14 +13,16 @@
     </TextView>
 
     <LinearLayout style="@style/main_wrapper"
+        android:id="@+id/main_buttons"
         android:layout_below="@+id/main_title"
         android:layout_alignParentBottom="true">
 
-        <LinearLayout style="@style/main_button_wrapper">
-            <Button style="@style/main_button"
-                android:text="@string/button_1_name"
-                android:onClick="directLoan" />
-        </LinearLayout>
+        <!--<LinearLayout style="@style/main_button_wrapper">-->
+            <!--<Button style="@style/main_button"-->
+                <!--android:id="@+id/test_button"-->
+                <!--android:text="@string/button_1_name"-->
+                <!--android:onClick="directLoan" />-->
+        <!--</LinearLayout>-->
 
         <!--<LinearLayout style="@style/main_button_wrapper">-->
             <!--<Button style="@style/main_button"-->

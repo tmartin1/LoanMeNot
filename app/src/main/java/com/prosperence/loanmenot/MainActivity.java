@@ -1,16 +1,15 @@
 package com.prosperence.loanmenot;
 
-
 import android.os.Bundle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RemoteViews;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.prosperence.loanmenot.MESSAGE";
@@ -19,16 +18,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.test_layout);
-//
-//        Button myButton = new Button(this);
-//        myButton.setLayoutParams(new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.MATCH_PARENT));
-//
-//        mainLayout.addView(myButton);
+        // Main layout
+        LinearLayout startPageLayout = new LinearLayout(this);
+        startPageLayout.setOrientation(LinearLayout.VERTICAL);
 
-        setContentView(R.layout.activity_main);
+        // Main page title
+        TextView title = new TextView(this);
+        title.setText("Click To Get Started!");
+        startPageLayout.addView(title);
+
+        // Add buttons to main page
+        String[] buttons = { "Direct Loan", "Credit Card", "Lease to Own", "Periodic Payments" };
+        for (String label : buttons) {
+            addButton(startPageLayout, label);
+        }
+
+        // Render main page
+        setContentView(startPageLayout);
+    }
+
+    private void addButton (LinearLayout layout, String label) {
+        LinearLayout buttonWrapper = new LinearLayout(this);
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        buttonWrapper.setLayoutParams(lp);
+        buttonWrapper.setOrientation(LinearLayout.HORIZONTAL);
+
+        Button button = (Button)getLayoutInflater().inflate(R.layout.main_button, null);
+        button.setText(label);
+        buttonWrapper.addView(button);
+        layout.addView(buttonWrapper);
     }
 
     @Override
@@ -52,40 +70,32 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    /** Called when the user clicks the Send button */
-//    public void sendMessage(View view) {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.edit_message);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
+//    // Show direct loan inputs.
+//    public void directLoan(View view) {
+//        goToFormView("directLoan");
+//        Intent intent = new Intent(this, BasicForm.class);
 //        startActivity(intent);
 //    }
 
-    // Show direct loan inputs.
-    public void directLoan(View view) {
-//        goToFormView("directLoan");
-        Intent intent = new Intent(this, BasicForm.class);
-        startActivity(intent);
-    }
+//    // Show credit card inputs.
+//    public void creditCard() {
+//        goToFormView("creditCard");
+//    }
 
-    // Show credit card inputs.
-    public void creditCard() {
-        goToFormView("creditCard");
-    }
+//    // Show periodic payment inputs.
+//    public void periodicPayments() {
+//         goToFormView("periodicPayments");
+//    }
 
-    // Show periodic payment inputs.
-    public void periodicPayments() {
-         goToFormView("periodicPayments");
-    }
-
-    // Show lease-to-own inputs.
-    public void leaseToOwn() {
-         goToFormView("leaseToOwn");
-    }
+//     // Show lease-to-own inputs.
+//    public void leaseToOwn() {
+//         goToFormView("leaseToOwn");
+//    }
 
     // Go to the form view to collect loan/payment information.
-    public void goToFormView(String view) {
-        //
+    public void goToFormView(View view) {
+        Intent intent = new Intent(this, BasicForm.class);
+        startActivity(intent);
     }
 
 }
