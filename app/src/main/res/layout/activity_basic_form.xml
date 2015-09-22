@@ -1,12 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/form_page_layout"
-    tools:context="com.prosperence.loanmenot.BasicForm">
+    tools:context="com.prosperence.loanmenot.BasicForm"
+    style="@style/form_page_layout">
 
     <LinearLayout style="@style/form_wrapper" android:layout_alignParentTop="true">
 
         <LinearLayout style="@style/field_wrapper">
-            <TextView style="@style/field_label" android:text="Total Cost" />
+            <TextView style="@style/field_label" android:text="Total Amount/Cost" />
             <EditText style="@style/number_field_input" android:id="@+id/totalCost" />
         </LinearLayout>
 
@@ -22,7 +22,9 @@
 
         <LinearLayout style="@style/field_wrapper">
             <TextView style="@style/field_label" android:text="Payment Frequency" />
-            <EditText style="@style/number_field_input" android:id="@+id/paymentFrequency" />
+            <Spinner style="@style/number_field_input"
+                android:id="@+id/payment_frequencies" />
+
         </LinearLayout>
 
     </LinearLayout>

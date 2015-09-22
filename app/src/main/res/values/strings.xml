@@ -32,6 +32,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_basic_form">BasicForm</string>
 
-    <!-- Display Message Activity -->
+    <!-- Form Activity -->
+    <string-array name="payment_frequencies">
+        <item>Weekly</item>
+        <item>Bi-Weekly</item>
+        <item>Monthly</item>
+    </string-array>
 
 </resources>
