@@ -12,8 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.prosperence.loanmenot.MESSAGE";
-
     // Option that the user selected (Loan, Credit, Lease to own, etc.).
     public static final String EXTRA_DEBT_TYPE = "com.prosperence.loanmenot.DEBT_TYPE";
 
