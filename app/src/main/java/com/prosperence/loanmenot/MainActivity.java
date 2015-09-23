@@ -14,8 +14,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.prosperence.loanmenot.MESSAGE";
 
+    // Option that the user selected (Loan, Credit, Lease to own, etc.).
+    public static final String EXTRA_DEBT_TYPE = "com.prosperence.loanmenot.DEBT_TYPE";
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Main layout
@@ -28,36 +31,21 @@ public class MainActivity extends AppCompatActivity {
         startPageLayout.addView(title);
 
         // Add buttons to main page
-        String[] buttons = { "Direct Loan", "Credit Card", "Lease to Own", "Periodic Payments" };
-        for (String label : buttons) {
-            addButton(startPageLayout, label);
-        }
+        addButtons(startPageLayout);
 
         // Render main page
         setContentView(startPageLayout);
     }
 
-    private void addButton (LinearLayout layout, String label) {
-        LinearLayout buttonWrapper = new LinearLayout(this);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        buttonWrapper.setLayoutParams(lp);
-        buttonWrapper.setOrientation(LinearLayout.HORIZONTAL);
-
-        Button button = (Button)getLayoutInflater().inflate(R.layout.main_button, null);
-        button.setText(label);
-        buttonWrapper.addView(button);
-        layout.addView(buttonWrapper);
-    }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu (Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected (MenuItem item) {
         // Handle action bar item clicks here. The action bar will automatically handle clicks on
         // the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -70,31 +58,46 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    // Show direct loan inputs.
-//    public void directLoan(View view) {
-//        goToFormView("directLoan");
-//        Intent intent = new Intent(this, BasicForm.class);
-//        startActivity(intent);
-//    }
+    private void addButtons (LinearLayout layout) {
+        // Define what buttons to add to main page.
+        String[] buttons = {
+                "Direct Loan",
+                "Credit Card",
+                "Lease to Own",
+                "Periodic Payments"
+        };
 
-//    // Show credit card inputs.
-//    public void creditCard() {
-//        goToFormView("creditCard");
-//    }
+        for (String label : buttons) {
+            addButton(layout, label);
+        }
+    }
 
-//    // Show periodic payment inputs.
-//    public void periodicPayments() {
-//         goToFormView("periodicPayments");
-//    }
+    private void addButton (LinearLayout layout, final String label) {
+        LinearLayout buttonWrapper = new LinearLayout(this);
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        buttonWrapper.setLayoutParams(lp);
+        buttonWrapper.setOrientation(LinearLayout.HORIZONTAL);
 
-//     // Show lease-to-own inputs.
-//    public void leaseToOwn() {
-//         goToFormView("leaseToOwn");
-//    }
+        Button button = (Button)getLayoutInflater().inflate(R.layout.main_button, null);
+        button.setText(label); // Set button text
+
+        // Define what happens when the button is clicked
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                goToFormView(view, label);
+            }
+        });
+
+        // Add button to button wrapper, add wrapper to layout
+        buttonWrapper.addView(button);
+        layout.addView(buttonWrapper);
+    }
 
     // Go to the form view to collect loan/payment information.
-    public void goToFormView(View view) {
-        Intent intent = new Intent(this, BasicForm.class);
+    public void goToFormView (View view, String debt_type) {
+        Intent intent = new Intent(view.getContext(), BasicForm.class);
+        intent.putExtra(EXTRA_DEBT_TYPE, debt_type);
         startActivity(intent);
     }
 

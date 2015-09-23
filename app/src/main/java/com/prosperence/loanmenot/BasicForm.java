@@ -1,5 +1,6 @@
 package com.prosperence.loanmenot;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +17,14 @@ public class BasicForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // TODO: Create this view programmatically.
+
+        Intent intent = getIntent();
+        String debt_type = intent.getStringExtra(MainActivity.EXTRA_DEBT_TYPE);
+
+        // Switch statement to build form based on what button was clicked (determines what information is needed).
+
         setContentView(R.layout.activity_basic_form);
 
         addItemsOnSpinner();
