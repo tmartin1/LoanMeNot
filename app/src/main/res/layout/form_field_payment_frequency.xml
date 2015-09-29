@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/field_wrapper">
+
+    <TextView style="@style/field_label" android:text="Payment Frequency" />
+    <Spinner style="@style/number_field_input"
+        android:id="@+id/paymentFrequency"
+        android:entries="@array/payment_frequencies"/>
+
+</LinearLayout>

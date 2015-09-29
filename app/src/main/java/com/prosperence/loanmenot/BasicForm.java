@@ -3,6 +3,7 @@ package com.prosperence.loanmenot;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -53,72 +54,49 @@ public class BasicForm extends AppCompatActivity {
 
     // Define form fields
     private void buildFormFields (LinearLayout formPageLayout, String debt_type) {
-        String[] labels;
-        View[] fields;
+        int[] inputs;
 
         // Build form based on what button debt type was clicked (determines what information is needed)
         switch(debt_type) {
             case "Direct Loan":
-                labels = new String[] {
-                        // field labels (same order as their corresponding view component)
-                        "Loan Amount",
-                        "Interest Rate",
-                        "Payment Frequency",
-                        "Payment Amount"
-                };
-                fields = new View[] {
-                        // xml view components, e.g. loan amount, interest rate, payment frequency, payment amount.
+                inputs = new int[] {
+                        // xml input view components (same order as corresponding labels)
+                        R.layout.form_field_loan_amount,
+                        R.layout.form_field_interest_rate,
+                        R.layout.form_field_payment_frequency,
+                        R.layout.form_field_payment_amount
                 };
                 break;
 
             case "Credit Card":
-                labels = new String[] {
-                        "Purchase Price",
-                        "Interest Rate",
-                        "Payment Amount"
-                };
-                fields = new View[] {
-                        // xml view components
+                inputs = new int[] {
+                        R.layout.form_field_purchase_price,
+                        R.layout.form_field_interest_rate,
+                        R.layout.form_field_payment_amount
                 };
                 break;
 
             // Currently handles 'Lease to Own' and 'Periodic Payments'
             default:
-                labels = new String[] {
-                        "Price of Product",
-                        "Payment Amount",
-                        "Payment Frequency",
-                        "Number of Payments"
-                };
-                fields = new View[] {
-                        // xml view components
+                inputs = new int[] {
+                        R.layout.form_field_purchase_price,
+                        R.layout.form_field_payment_amount,
+                        R.layout.form_field_payment_frequency,
+                        R.layout.form_field_number_of_payments
                 };
                 break;
         }
 
-        addFormFields(formPageLayout, labels, fields);
+        addFormFields(formPageLayout, inputs);
     }
 
-    // Inflate form fields and add to layout
-    private void addFormFields (LinearLayout formPageLayout, String[] field_labels, View[] field_views) {
-        // iterate over field_views
-        // create new LinearLayout to be the field_wrapper
-        // create new TextView element for the label and addView it to the field_wrapper
-        // set text for label from field_labels
-        // inflate the component in field_views and addView it to the field_wrapper
-        // addView field_wrapper to formPageLayout
+    // Build and inflate form fields and add to layout
+    private void addFormFields (LinearLayout formPageLayout, int[] inputs) {
+        for (int input : inputs) {
+            // Inflate form field partial and add to view.
+            LinearLayout new_field = (LinearLayout) getLayoutInflater().inflate(input, null);
+            formPageLayout.addView(new_field);
+        }
     }
 
-    // Add items for form spinner (dropdown list).
-    public void addItemsOnSpinner () {
-        Spinner payment_frequencies = (Spinner) findViewById(R.id.payment_frequencies);
-        List<String> list = new ArrayList<String>();
-        list.add("Weekly");
-        list.add("Bi-Weekly");
-        list.add("Monthly");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        payment_frequencies.setAdapter(dataAdapter);
-    }
 }

@@ -22,9 +22,7 @@
 
         <LinearLayout style="@style/field_wrapper">
             <TextView style="@style/field_label" android:text="Payment Frequency" />
-            <Spinner style="@style/number_field_input"
-                android:id="@+id/payment_frequencies" />
-
+            <Spinner style="@style/number_field_input" android:id="@+id/paymentFrequency" />
         </LinearLayout>
 
     </LinearLayout>

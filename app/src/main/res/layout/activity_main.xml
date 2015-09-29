@@ -42,7 +42,7 @@
                 <!--android:onClick="@string/button_4_function" />-->
         <!--</LinearLayout>-->
 
-        <LinearLayout style="@style/main_button_wrapper" android:id="@+id/test_layout">
+        <LinearLayout android:id="@+id/test_layout">
         </LinearLayout>
 
     </LinearLayout>
