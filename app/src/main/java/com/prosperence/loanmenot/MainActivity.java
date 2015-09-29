@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,19 +18,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Main layout
+        // Create main layout.
         LinearLayout startPageLayout = new LinearLayout(this);
         startPageLayout.setOrientation(LinearLayout.VERTICAL);
 
-        // Main page title
+        // Main page title.
+        // TODO: Format this title.
         TextView title = new TextView(this);
         title.setText("Click To Get Started!");
         startPageLayout.addView(title);
 
-        // Add buttons to main page
+        // Add buttons to main page.
         addButtons(startPageLayout);
 
-        // Render main page
+        // Render main page.
         setContentView(startPageLayout);
     }
 
@@ -71,15 +71,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addButton (LinearLayout layout, final String label) {
-        LinearLayout buttonWrapper = new LinearLayout(this);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        buttonWrapper.setLayoutParams(lp);
-        buttonWrapper.setOrientation(LinearLayout.HORIZONTAL);
-
         Button button = (Button)getLayoutInflater().inflate(R.layout.main_button, null);
         button.setText(label); // Set button text
 
-        // Define what happens when the button is clicked
+        // Define what happens when the button is clicked.
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
@@ -87,9 +82,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Add button to button wrapper, add wrapper to layout
-        buttonWrapper.addView(button);
-        layout.addView(buttonWrapper);
+        // Add button to layout.
+        layout.addView(button);
     }
 
     // Go to the form view to collect loan/payment information.

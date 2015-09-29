@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class BasicForm extends AppCompatActivity {
@@ -17,16 +18,19 @@ public class BasicForm extends AppCompatActivity {
         Intent intent = getIntent();
         String debt_type = intent.getStringExtra(MainActivity.EXTRA_DEBT_TYPE);
 
-        // Form page layout
+        // Create form page layout.
         LinearLayout formPageLayout = new LinearLayout(this);
         formPageLayout.setOrientation(LinearLayout.VERTICAL);
 
-        // Add form fields to layout
+        // Add form fields to layout.
         buildFormFields(formPageLayout, debt_type);
 
-        // TODO: Add 'SUBMIT' button
+        // Add 'SUBMIT' button.
+        Button submit_button = (Button)getLayoutInflater().inflate(R.layout.button_submit, null);
+        submit_button.setText("Submit");
+        formPageLayout.addView(submit_button);
 
-        // Render form page
+        // Render form page.
         setContentView(formPageLayout);
     }
 
@@ -44,7 +48,7 @@ public class BasicForm extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Define form fields
+    // Define form fields.
     private void buildFormFields (LinearLayout formPageLayout, String debt_type) {
         int[] inputs;
 
@@ -52,7 +56,6 @@ public class BasicForm extends AppCompatActivity {
         switch(debt_type) {
             case "Direct Loan":
                 inputs = new int[] {
-                        // xml input view components (same order as corresponding labels)
                         R.layout.form_field_loan_amount,
                         R.layout.form_field_interest_rate,
                         R.layout.form_field_payment_frequency,
@@ -82,13 +85,18 @@ public class BasicForm extends AppCompatActivity {
         addFormFields(formPageLayout, inputs);
     }
 
-    // Build and inflate form fields and add to layout
+    // Build and inflate form fields and add to layout.
     private void addFormFields (LinearLayout formPageLayout, int[] inputs) {
         for (int input : inputs) {
             // Inflate form field partial and add to view.
             LinearLayout new_field = (LinearLayout) getLayoutInflater().inflate(input, null);
             formPageLayout.addView(new_field);
         }
+    }
+
+    // Process inputs and go to results page.
+    public void submitForm () {
+        //
     }
 
 }
